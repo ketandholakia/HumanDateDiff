@@ -52,7 +52,7 @@ var
   LUnit: THumanTimeUnit;
 begin
   FUnitText := TObjectDictionary<THumanTimeUnit, TDictionary<TPluralForm, string>>.Create([doOwnsValues]);
-  for LUnit in THumanTimeUnit do
+  for LUnit := Low(THumanTimeUnit) to High(THumanTimeUnit) do
     FUnitText.Add(LUnit, TDictionary<TPluralForm, string>.Create);
 end;
 

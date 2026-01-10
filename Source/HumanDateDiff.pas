@@ -44,6 +44,12 @@ type
   end;
 
 function IsYesterday(AFrom, ATo: TDateTime): Boolean;
+
+function IsTomorrow(AFrom, ATo: TDateTime): Boolean;
+
+implementation
+
+function IsYesterday(AFrom, ATo: TDateTime): Boolean;
 begin
   Result :=
     (Trunc(AFrom) = Trunc(ATo - 1)) and
@@ -56,8 +62,6 @@ begin
     (Trunc(AFrom) = Trunc(ATo + 1)) and
     (Trunc(ATo) <> Trunc(AFrom));
 end;
-
-implementation
 
 const
   SEC_MINUTE = 60;
@@ -153,27 +157,27 @@ begin
   if IsWithinWeekThreshold(Days) then
   begin
     if FromDate < ToDate then
-      Exit(FLang.NextWeek)
+      Exit(FLang.LastWeek)
     else
-      Exit(FLang.LastWeek);
+      Exit(FLang.NextWeek);
   end;
 
   { SMART MONTH }
   if IsWithinMonthThreshold(Days) then
   begin
     if FromDate < ToDate then
-      Exit(FLang.NextMonth)
+      Exit(FLang.LastMonth)
     else
-      Exit(FLang.LastMonth);
+      Exit(FLang.NextMonth);
   end;
 
   { SMART YEAR }
   if IsWithinYearThreshold(Days) then
   begin
     if FromDate < ToDate then
-      Exit(FLang.NextYear)
+      Exit(FLang.LastYear)
     else
-      Exit(FLang.LastYear);
+      Exit(FLang.NextYear);
   end;
 
   { FALLBACK }
@@ -184,11 +188,11 @@ function THumanDateDiff.BuildCompositeDiff(FromDate, ToDate: TDateTime): string;
 var
   Seconds: Int64;
   Parts: TArray<THumanDiffPart>;
-  IsFuture: Boolean;
+  IsPast: Boolean;
   I: Integer;
 begin
   Seconds := Abs(SecondsBetween(FromDate, ToDate));
-  IsFuture := FromDate < ToDate;
+  IsPast := FromDate < ToDate;
 
   Parts := [];
 
@@ -216,10 +220,10 @@ begin
 
   if FPrintAB then
   begin
-    if IsFuture then
-      Result := Result + FLang.After
+    if IsPast then
+      Result := Result + FLang.Before
     else
-      Result := Result + FLang.Before;
+      Result := Result + FLang.After;
   end;
 end;
 
