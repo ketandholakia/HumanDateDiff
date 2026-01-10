@@ -1,0 +1,4 @@
+HumanDateDiff v1.0.0
+- Composite output
+- Smart thresholds
+- Indian locales

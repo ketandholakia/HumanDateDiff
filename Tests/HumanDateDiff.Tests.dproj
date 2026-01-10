@@ -1,0 +1,16 @@
+program HumanDateDiff.Tests;
+
+{$APPTYPE CONSOLE}
+
+uses
+  DUnitX.Loggers.Console,
+  DUnitX.Loggers.XML.NUnit,
+  DUnitX.TestFramework,
+  TestHumanDateDiff.Core in 'TestHumanDateDiff.Core.pas',
+  TestHumanDateDiff.Rules in 'TestHumanDateDiff.Rules.pas',
+  TestHumanDateDiff.Locales in 'TestHumanDateDiff.Locales.pas';
+
+begin
+  TDUnitX.CheckCommandLine;
+  TDUnitX.Run;
+end.

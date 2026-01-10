@@ -1,0 +1,17 @@
+package HumanDateDiffDT;
+
+{$R *.res}
+
+{$DESCRIPTION 'HumanDateDiff Design-Time Package'}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  designide,
+  HumanDateDiffRT;
+
+contains
+  // EMPTY ON PURPOSE – NO COMPONENTS REGISTERED
+
+end.

@@ -1,0 +1,21 @@
+package HumanDateDiffRT;
+
+{$R *.res}
+
+{$DESCRIPTION 'Human readable date difference library'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl;
+
+contains
+  HumanDateDiff in '..\Source\HumanDateDiff.pas',
+  HumanDateDiff.Types in '..\Source\HumanDateDiff.Types.pas',
+  HumanDateDiff.Lang in '..\Source\HumanDateDiff.Lang.pas',
+  HumanDateDiff.Lang.EN in '..\Source\HumanDateDiff.Lang.EN.pas',
+  HumanDateDiff.Lang.BR in '..\Source\HumanDateDiff.Lang.BR.pas',
+  HumanDateDiff.Lang.HI in '..\Source\HumanDateDiff.Lang.HI.pas',
+  HumanDateDiff.Lang.GU in '..\Source\HumanDateDiff.Lang.GU.pas';
+
+end.
