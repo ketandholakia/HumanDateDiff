@@ -16,6 +16,17 @@ contains
   HumanDateDiff.Lang.EN in '..\Source\HumanDateDiff.Lang.EN.pas',
   HumanDateDiff.Lang.BR in '..\Source\HumanDateDiff.Lang.BR.pas',
   HumanDateDiff.Lang.HI in '..\Source\HumanDateDiff.Lang.HI.pas',
-  HumanDateDiff.Lang.GU in '..\Source\HumanDateDiff.Lang.GU.pas';
+  HumanDateDiff.Lang.GU in '..\Source\HumanDateDiff.Lang.GU.pas',
+  HumanDateDiff.Plural.Indian in '..\Source\HumanDateDiff.Plural.Indian.pas',
+  HumanDateDiff.Lang.MR in '..\Source\HumanDateDiff.Lang.MR.pas',
+  HumanDateDiff.Lang.TA in '..\Source\HumanDateDiff.Lang.TA.pas',
+  HumanDateDiff.Lang.BN in '..\Source\HumanDateDiff.Lang.BN.pas',
+  HumanDateDiff.Lang.TE in '..\Source\HumanDateDiff.Lang.TE.pas',
+  HumanDateDiff.Lang.KN in '..\Source\HumanDateDiff.Lang.KN.pas',
+  HumanDateDiff.Lang.ML in '..\Source\HumanDateDiff.Lang.ML.pas',
+  HumanDateDiff.Lang.PA in '..\Source\HumanDateDiff.Lang.PA.pas',
+  HumanDateDiff.Lang.OR in '..\Source\HumanDateDiff.Lang.OR.pas',
+  HumanDateDiff.Lang.AS in '..\Source\HumanDateDiff.Lang.AS.pas',
+  HumanDateDiff.Lang.SA in '..\Source\HumanDateDiff.Lang.SA.pas';
 
 end.

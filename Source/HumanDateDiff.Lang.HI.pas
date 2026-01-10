@@ -2,52 +2,38 @@ unit HumanDateDiff.Lang.HI;
 
 interface
 
-uses HumanDateDiff.Lang, HumanDateDiff.Types;
+uses
+  HumanDateDiff.Lang,
+  HumanDateDiff.Types,
+  HumanDateDiff.Plural.Indian;
 
 function LangHI: TLang;
 
 implementation
 
-function HindiPlural(AValue: Integer): TPluralForm;
-begin
-  if AValue = 1 then
-    Result := pfOne
-  else
-    Result := pfOther;
-end;
-
 function LangHI: TLang;
 begin
   Result := TLang.Create;
+  Result.PluralRule := IndianPluralRule;
 
-  Result.Before     := ' पहले';
-  Result.After      := ' अब से';
-  Result.NowText    := 'अभी';
-  Result.Yesterday  := 'कल';
-  Result.Tomorrow   := 'कल';
-  Result.LastWeek   := 'पिछले हफ्ते';
-  Result.NextWeek   := 'अगले हफ्ते';
-  Result.LastMonth  := 'पिछले महीने';
-  Result.NextMonth  := 'अगले महीने';
-  Result.LastYear   := 'पिछले साल';
-  Result.NextYear   := 'अगले साल';
+  Result.NowText   := 'अब';
+  Result.Yesterday := 'कल';
+  Result.Tomorrow  := 'कल';
 
-  Result.PluralRule := HindiPlural;
+  Result.LastWeek  := 'पिछले सप्ताह';
+  Result.NextWeek  := 'अगले सप्ताह';
+  Result.LastMonth := 'पिछला महीना';
+  Result.NextMonth := 'अगले महीने';
+  Result.LastYear  := 'पिछला साल';
+  Result.NextYear  := 'अगला साल';
 
-  Result.UnitTexts[htuYear].Add(pfOne, 'वर्ष');
-  Result.UnitTexts[htuYear].Add(pfOther, 'वर्ष');
-  Result.UnitTexts[htuMonth].Add(pfOne, 'महीना');
-  Result.UnitTexts[htuMonth].Add(pfOther, 'महीने');
-  Result.UnitTexts[htuWeek].Add(pfOne, 'सप्ताह');
-  Result.UnitTexts[htuWeek].Add(pfOther, 'सप्ताह');
-  Result.UnitTexts[htuDay].Add(pfOne, 'दिन');
-  Result.UnitTexts[htuDay].Add(pfOther, 'दिन');
-  Result.UnitTexts[htuHour].Add(pfOne, 'घंटा');
-  Result.UnitTexts[htuHour].Add(pfOther, 'घंटे');
-  Result.UnitTexts[htuMinute].Add(pfOne, 'मिनट');
-  Result.UnitTexts[htuMinute].Add(pfOther, 'मिनट');
-  Result.UnitTexts[htuSecond].Add(pfOne, 'सेकंड');
-  Result.UnitTexts[htuSecond].Add(pfOther, 'सेकंड');
+  Result.Before := 'पहले';
+  Result.After  := 'बाद';
+
+  Result.AddUnit(htuDay, 'दिन');
+  Result.AddUnit(htuHour, 'घंटा');
+  Result.AddUnit(htuMinute, 'मिनट');
+  Result.AddUnit(htuSecond, 'सेकंड');
 end;
 
 end.
