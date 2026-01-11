@@ -7,33 +7,35 @@ uses
   HumanDateDiff.Types,
   HumanDateDiff.Plural.Indian;
 
-function LangGU: TLang;
+var
+  LangGU: TLang;
 
 implementation
 
-function LangGU: TLang;
-begin
-  Result := TLang.Create;
-  Result.PluralRule := IndianPluralRule;
+initialization
+  LangGU := TLang.Create;
+  LangGU.PluralRule := IndianPluralRule;
 
-  Result.NowText   := 'હવે';
-  Result.Yesterday := 'ગઈકાલે';
-  Result.Tomorrow  := 'આવતીકાલે';
+  LangGU.NowText   := 'હવે';
+  LangGU.Yesterday := 'ગઈકાલે';
+  LangGU.Tomorrow  := 'આવતીકાલે';
 
-  Result.LastWeek  := 'ગત સપ્તાહ';
-  Result.NextWeek  := 'આવતા સપ્તાહ';
-  Result.LastMonth := 'ગયો મહિનો';
-  Result.NextMonth := 'આવતા મહિના';
-  Result.LastYear  := 'ગયા વર્ષે';
-  Result.NextYear  := 'આવતા વર્ષ';
+  LangGU.LastWeek  := 'ગત સપ્તાહ';
+  LangGU.NextWeek  := 'આવતા સપ્તાહ';
+  LangGU.LastMonth := 'ગયો મહિનો';
+  LangGU.NextMonth := 'આવતા મહિના';
+  LangGU.LastYear  := 'ગયા વર્ષે';
+  LangGU.NextYear  := 'આવતા વર્ષ';
 
-  Result.Before := 'પહેલાં';
-  Result.After  := 'પછી';
+  LangGU.Before := 'પહેલાં';
+  LangGU.After  := 'પછી';
 
-  Result.AddUnit(htuDay, 'દિવસ');
-  Result.AddUnit(htuHour, 'કલાક');
-  Result.AddUnit(htuMinute, 'મિનિટ');
-  Result.AddUnit(htuSecond, 'સેકન્ડ');
-end;
+  LangGU.AddUnit(htuDay, 'દિવસ');
+  LangGU.AddUnit(htuHour, 'કલાક');
+  LangGU.AddUnit(htuMinute, 'મિનિટ');
+  LangGU.AddUnit(htuSecond, 'સેકન્ડ');
+
+finalization
+  LangGU.Free;
 
 end.

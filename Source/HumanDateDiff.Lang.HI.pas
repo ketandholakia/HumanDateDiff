@@ -7,33 +7,35 @@ uses
   HumanDateDiff.Types,
   HumanDateDiff.Plural.Indian;
 
-function LangHI: TLang;
+var
+  LangHI: TLang;
 
 implementation
 
-function LangHI: TLang;
-begin
-  Result := TLang.Create;
-  Result.PluralRule := IndianPluralRule;
+initialization
+  LangHI := TLang.Create;
+  LangHI.PluralRule := IndianPluralRule;
 
-  Result.NowText   := 'अब';
-  Result.Yesterday := 'कल';
-  Result.Tomorrow  := 'कल';
+  LangHI.NowText   := 'अब';
+  LangHI.Yesterday := 'कल';
+  LangHI.Tomorrow  := 'कल';
 
-  Result.LastWeek  := 'पिछले सप्ताह';
-  Result.NextWeek  := 'अगले सप्ताह';
-  Result.LastMonth := 'पिछला महीना';
-  Result.NextMonth := 'अगले महीने';
-  Result.LastYear  := 'पिछला साल';
-  Result.NextYear  := 'अगला साल';
+  LangHI.LastWeek  := 'पिछले सप्ताह';
+  LangHI.NextWeek  := 'अगले सप्ताह';
+  LangHI.LastMonth := 'पिछला महीना';
+  LangHI.NextMonth := 'अगले महीने';
+  LangHI.LastYear  := 'पिछला साल';
+  LangHI.NextYear  := 'अगला साल';
 
-  Result.Before := 'पहले';
-  Result.After  := 'बाद';
+  LangHI.Before := 'पहले';
+  LangHI.After  := 'बाद';
 
-  Result.AddUnit(htuDay, 'दिन');
-  Result.AddUnit(htuHour, 'घंटा');
-  Result.AddUnit(htuMinute, 'मिनट');
-  Result.AddUnit(htuSecond, 'सेकंड');
-end;
+  LangHI.AddUnit(htuDay, 'दिन');
+  LangHI.AddUnit(htuHour, 'घंटा');
+  LangHI.AddUnit(htuMinute, 'मिनट');
+  LangHI.AddUnit(htuSecond, 'सेकंड');
+
+finalization
+  LangHI.Free;
 
 end.
