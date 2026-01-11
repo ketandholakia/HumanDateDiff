@@ -32,16 +32,22 @@ begin
     FLangML.LastYear  := 'കഴിഞ്ഞ വർഷം';
     FLangML.NextYear  := 'അടുത്ത വർഷം';
 
-    FLangML.Before := 'മുൻപ്';
-    FLangML.After  := 'ശേഷം';
+    FLangML.Before := ' മുൻപ്';
+    FLangML.After  := ' ശേഷം';
 
-    FLangML.AddUnit(htuDay, 'ദിവസം');
-    FLangML.AddUnit(htuHour, 'മണിക്കൂർ');
-    FLangML.AddUnit(htuMinute, 'മിനിറ്റ്');
-    FLangML.AddUnit(htuSecond, 'സെക്കൻഡ്');
+    FLangML.UnitTexts[htuDay].Add(pfOne, 'ദിവസം');
+    FLangML.UnitTexts[htuDay].Add(pfOther, 'ദിവസം');
+    FLangML.UnitTexts[htuHour].Add(pfOne, 'മണിക്കൂർ');
+    FLangML.UnitTexts[htuHour].Add(pfOther, 'മണിക്കൂർ');
+    FLangML.UnitTexts[htuMinute].Add(pfOne, 'മിനിറ്റ്');
+    FLangML.UnitTexts[htuMinute].Add(pfOther, 'മിനിറ്റ്');
+    FLangML.UnitTexts[htuSecond].Add(pfOne, 'സെക്കൻഡ്');
+    FLangML.UnitTexts[htuSecond].Add(pfOther, 'സെക്കൻഡ്');
   end;
   Result := FLangML;
 end;
+
+initialization
 
 finalization
   FLangML.Free;

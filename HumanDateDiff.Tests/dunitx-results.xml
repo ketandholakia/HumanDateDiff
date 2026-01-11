@@ -1,30 +1,40 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<test-results name="D:\ketan\github\HumanDateDiff\HumanDateDiff.Tests\HumanDateDiff.Tests.exe" total="10" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2026-01-10" time="0.001">
+<test-results name="D:\ketan\github\HumanDateDiff\HumanDateDiff.Tests\HumanDateDiff.Tests.exe" total="20" errors="0" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2026-01-11" time="0.001">
   <culture-info current-culture="en" current-uiculture="en" />
   <test-suite type="Assembly" name="HumanDateDiff.Tests.exe" executed="true" result="Success" success="True" time="0.001" asserts="0">
     <results>
-        <test-suite type="Namespace" name="TestHumanDateDiff" executed="true" result="Success" success="True" time="0.001" asserts="0" >
+        <test-suite type="Namespace" name="TestHumanDateDiff" executed="true" result="Success" success="True" time="0.002" asserts="0" >
           <results>
-              <test-suite type="Fixture" name="THumanDateDiffRuleTests" executed="True" result="Success" success="True" time="0.001" >
+              <test-suite type="Fixture" name="THumanDateDiffCoreTests" executed="True" result="Success" success="True" time="0.001" >
+                <results>
+                  <test-case name="Now_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Seconds_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Composite_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite type="Fixture" name="THumanDateDiffLocaleTests" executed="True" result="Success" success="True" time="0.001" >
+                <results>
+                  <test-case name="Hindi_Plural_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Gujarati_Plural_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Marathi_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Tamil_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Bengali_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Telugu_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Kannada_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Malayalam_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Punjabi_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Odia_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Assamese_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                  <test-case name="Sanskrit_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
+                </results>
+              </test-suite>
+              <test-suite type="Fixture" name="THumanDateDiffRuleTests" executed="True" result="Success" success="True" time="0.000" >
                 <results>
                   <test-case name="Yesterday_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="Tomorrow_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="LastWeek_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="LastMonth_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                   <test-case name="LastYear_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                </results>
-              </test-suite>
-              <test-suite type="Fixture" name="THumanDateDiffLocaleTests" executed="True" result="Success" success="True" time="0.000" >
-                <results>
-                  <test-case name="Hindi_Plural_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                  <test-case name="Gujarati_Plural_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                </results>
-              </test-suite>
-              <test-suite type="Fixture" name="THumanDateDiffCoreTests" executed="True" result="Success" success="True" time="0.000" >
-                <results>
-                  <test-case name="Now_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                  <test-case name="Seconds_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
-                  <test-case name="Composite_Test" executed="True" result="Success" success="True" time="0.000" asserts="0" />
                 </results>
               </test-suite>
           </results>

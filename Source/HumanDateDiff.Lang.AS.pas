@@ -1,4 +1,4 @@
-unit HumanDateDiff.Lang.AS;
+unit HumanDateDiff.Lang.&AS;
 
 interface
 
@@ -32,16 +32,22 @@ begin
     FLangAS.LastYear  := 'যোৱাবছৰ';
     FLangAS.NextYear  := 'অহা বছৰ';
 
-    FLangAS.Before := 'আগতে';
-    FLangAS.After  := 'পাছত';
+    FLangAS.Before := ' আগতে';
+    FLangAS.After  := ' পাছত';
 
-    FLangAS.AddUnit(htuDay, 'দিন');
-    FLangAS.AddUnit(htuHour, 'ঘণ্টা');
-    FLangAS.AddUnit(htuMinute, 'মিনিট');
-    FLangAS.AddUnit(htuSecond, 'ছেকেণ্ড');
+    FLangAS.UnitTexts[htuDay].Add(pfOne, 'দিন');
+    FLangAS.UnitTexts[htuDay].Add(pfOther, 'দিন');
+    FLangAS.UnitTexts[htuHour].Add(pfOne, 'ঘণ্টা');
+    FLangAS.UnitTexts[htuHour].Add(pfOther, 'ঘণ্টা');
+    FLangAS.UnitTexts[htuMinute].Add(pfOne, 'মিনিট');
+    FLangAS.UnitTexts[htuMinute].Add(pfOther, 'মিনিট');
+    FLangAS.UnitTexts[htuSecond].Add(pfOne, 'ছেকেণ্ড');
+    FLangAS.UnitTexts[htuSecond].Add(pfOther, 'ছেকেণ্ড');
   end;
   Result := FLangAS;
 end;
+
+initialization
 
 finalization
   FLangAS.Free;

@@ -5,7 +5,7 @@ into **human-readable text**, inspired by Moment.js / Day.js / Humanizer,
 but designed specifically for **native Delphi (Win32/Win64/FMX)**.
 
 ✔ No external dependencies  
-✔ Locale-aware (English, Hindi, Gujarati, Portuguese)  
+✔ Locale-aware (English, Portuguese, and 10+ Indian languages)  
 ✔ Smart calendar rules  
 ✔ Production-ready  
 
@@ -110,7 +110,7 @@ docs/LANGUAGE_GUIDE.md – Adding new languages/locales
 
 ## 🛣 Roadmap
 
-- Additional Indian languages
+- [x] Additional Indian languages
 - CLDR plural categories
 - Time-zone aware rules
 - GitHub Actions CI

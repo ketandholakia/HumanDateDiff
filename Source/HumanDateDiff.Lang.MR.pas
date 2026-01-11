@@ -32,16 +32,22 @@ begin
     FLangMR.LastYear  := 'मागील वर्ष';
     FLangMR.NextYear  := 'पुढील वर्ष';
 
-    FLangMR.Before := 'पूर्वी';
-    FLangMR.After  := 'नंतर';
+    FLangMR.Before := ' पूर्वी';
+    FLangMR.After  := ' नंतर';
 
-    FLangMR.AddUnit(htuDay, 'दिवस');
-    FLangMR.AddUnit(htuHour, 'तास');
-    FLangMR.AddUnit(htuMinute, 'मिनिट');
-    FLangMR.AddUnit(htuSecond, 'सेकंद');
+    FLangMR.UnitTexts[htuDay].Add(pfOne, 'दिवस');
+    FLangMR.UnitTexts[htuDay].Add(pfOther, 'दिवस');
+    FLangMR.UnitTexts[htuHour].Add(pfOne, 'तास');
+    FLangMR.UnitTexts[htuHour].Add(pfOther, 'तास');
+    FLangMR.UnitTexts[htuMinute].Add(pfOne, 'मिनिट');
+    FLangMR.UnitTexts[htuMinute].Add(pfOther, 'मिनिट');
+    FLangMR.UnitTexts[htuSecond].Add(pfOne, 'सेकंद');
+    FLangMR.UnitTexts[htuSecond].Add(pfOther, 'सेकंद');
   end;
   Result := FLangMR;
 end;
+
+initialization
 
 finalization
   FLangMR.Free;

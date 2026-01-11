@@ -15,8 +15,8 @@ uses
   HumanDateDiff.Lang.KN,
   HumanDateDiff.Lang.ML,
   HumanDateDiff.Lang.PA,
-  HumanDateDiff.Lang.OR,
-  HumanDateDiff.Lang.AS,
+  HumanDateDiff.Lang.&OR,
+  HumanDateDiff.Lang.&AS,
   HumanDateDiff.Lang.SA;
 
 type

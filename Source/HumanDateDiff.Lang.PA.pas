@@ -32,16 +32,22 @@ begin
     FLangPA.LastYear  := 'ਪਿਛਲੇ ਸਾਲ';
     FLangPA.NextYear  := 'ਅਗਲੇ ਸਾਲ';
 
-    FLangPA.Before := 'ਪਹਿਲਾਂ';
-    FLangPA.After  := 'ਬਾਅਦ';
+    FLangPA.Before := ' ਪਹਿਲਾਂ';
+    FLangPA.After  := ' ਬਾਅਦ';
 
-    FLangPA.AddUnit(htuDay, 'ਦਿਨ');
-    FLangPA.AddUnit(htuHour, 'ਘੰਟਾ');
-    FLangPA.AddUnit(htuMinute, 'ਮਿੰਟ');
-    FLangPA.AddUnit(htuSecond, 'ਸੈਕਿੰਡ');
+    FLangPA.UnitTexts[htuDay].Add(pfOne, 'ਦਿਨ');
+    FLangPA.UnitTexts[htuDay].Add(pfOther, 'ਦਿਨ');
+    FLangPA.UnitTexts[htuHour].Add(pfOne, 'ਘੰਟਾ');
+    FLangPA.UnitTexts[htuHour].Add(pfOther, 'ਘੰਟਾ');
+    FLangPA.UnitTexts[htuMinute].Add(pfOne, 'ਮਿੰਟ');
+    FLangPA.UnitTexts[htuMinute].Add(pfOther, 'ਮਿੰਟ');
+    FLangPA.UnitTexts[htuSecond].Add(pfOne, 'ਸੈਕਿੰਡ');
+    FLangPA.UnitTexts[htuSecond].Add(pfOther, 'ਸੈਕਿੰਡ');
   end;
   Result := FLangPA;
 end;
+
+initialization
 
 finalization
   FLangPA.Free;

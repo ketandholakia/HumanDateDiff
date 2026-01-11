@@ -1,4 +1,4 @@
-unit HumanDateDiff.Lang.OR;
+unit HumanDateDiff.Lang.&OR;
 
 interface
 
@@ -32,16 +32,22 @@ begin
     FLangOR.LastYear  := 'ଗତ ବର୍ଷ';
     FLangOR.NextYear  := 'ଆସନ୍ତା ବର୍ଷ';
 
-    FLangOR.Before := 'ପୂର୍ବରୁ';
-    FLangOR.After  := 'ପରେ';
+    FLangOR.Before := ' ପୂର୍ବରୁ';
+    FLangOR.After  := ' ପରେ';
 
-    FLangOR.AddUnit(htuDay, 'ଦିନ');
-    FLangOR.AddUnit(htuHour, 'ଘଣ୍ଟା');
-    FLangOR.AddUnit(htuMinute, 'ମିନିଟ');
-    FLangOR.AddUnit(htuSecond, 'ସେକେଣ୍ଡ');
+    FLangOR.UnitTexts[htuDay].Add(pfOne, 'ଦିନ');
+    FLangOR.UnitTexts[htuDay].Add(pfOther, 'ଦିନ');
+    FLangOR.UnitTexts[htuHour].Add(pfOne, 'ଘଣ୍ଟା');
+    FLangOR.UnitTexts[htuHour].Add(pfOther, 'ଘଣ୍ଟା');
+    FLangOR.UnitTexts[htuMinute].Add(pfOne, 'ମିନିଟ');
+    FLangOR.UnitTexts[htuMinute].Add(pfOther, 'ମିନିଟ');
+    FLangOR.UnitTexts[htuSecond].Add(pfOne, 'ସେକେଣ୍ଡ');
+    FLangOR.UnitTexts[htuSecond].Add(pfOther, 'ସେକେଣ୍ଡ');
   end;
   Result := FLangOR;
 end;
+
+initialization
 
 finalization
   FLangOR.Free;

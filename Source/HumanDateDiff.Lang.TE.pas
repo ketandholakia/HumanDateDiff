@@ -32,16 +32,22 @@ begin
     FLangTE.LastYear  := 'గత సంవత్సరం';
     FLangTE.NextYear  := 'వచ్చే సంవత్సరం';
 
-    FLangTE.Before := 'ముందు';
-    FLangTE.After  := 'తరువాత';
+    FLangTE.Before := ' ముందు';
+    FLangTE.After  := ' తరువాత';
 
-    FLangTE.AddUnit(htuDay, 'రోజు');
-    FLangTE.AddUnit(htuHour, 'గంట');
-    FLangTE.AddUnit(htuMinute, 'నిమిషం');
-    FLangTE.AddUnit(htuSecond, 'సెకను');
+    FLangTE.UnitTexts[htuDay].Add(pfOne, 'రోజు');
+    FLangTE.UnitTexts[htuDay].Add(pfOther, 'రోజు');
+    FLangTE.UnitTexts[htuHour].Add(pfOne, 'గంట');
+    FLangTE.UnitTexts[htuHour].Add(pfOther, 'గంట');
+    FLangTE.UnitTexts[htuMinute].Add(pfOne, 'నిమిషం');
+    FLangTE.UnitTexts[htuMinute].Add(pfOther, 'నిమిషం');
+    FLangTE.UnitTexts[htuSecond].Add(pfOne, 'సెకను');
+    FLangTE.UnitTexts[htuSecond].Add(pfOther, 'సెకను');
   end;
   Result := FLangTE;
 end;
+
+initialization
 
 finalization
   FLangTE.Free;

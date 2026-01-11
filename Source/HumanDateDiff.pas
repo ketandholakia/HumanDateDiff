@@ -10,6 +10,9 @@ uses
   HumanDateDiff.Types,
   HumanDateDiff.Lang;
 
+const
+  HUMAN_DATE_DIFF_VERSION = '1.1.0';
+
 var
   DefaultLang: TLang;
   DefaultPrintAfterBefore: Boolean = True;
@@ -221,9 +224,19 @@ begin
   if FPrintAB then
   begin
     if IsPast then
-      Result := Result + FLang.Before
+    begin
+      if (Length(FLang.Before) > 0) and (FLang.Before[1] = ' ') then
+        Result := Result + FLang.Before
+      else
+        Result := Result + ' ' + FLang.Before;
+    end
     else
-      Result := Result + FLang.After;
+    begin
+      if (Length(FLang.After) > 0) and (FLang.After[1] = ' ') then
+        Result := Result + FLang.After
+      else
+        Result := Result + ' ' + FLang.After;
+    end;
   end;
 end;
 

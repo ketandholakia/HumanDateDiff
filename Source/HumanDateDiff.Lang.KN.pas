@@ -32,16 +32,22 @@ begin
     FLangKN.LastYear  := 'ಕಳೆದ ವರ್ಷ';
     FLangKN.NextYear  := 'ಮುಂದಿನ ವರ್ಷ';
 
-    FLangKN.Before := 'ಮೊದಲು';
-    FLangKN.After  := 'ನಂತರ';
+    FLangKN.Before := ' ಮೊದಲು';
+    FLangKN.After  := ' ನಂತರ';
 
-    FLangKN.AddUnit(htuDay, 'ದಿನ');
-    FLangKN.AddUnit(htuHour, 'ಗಂಟೆ');
-    FLangKN.AddUnit(htuMinute, 'ನಿಮಿಷ');
-    FLangKN.AddUnit(htuSecond, 'ಸೆಕೆಂಡ್');
+    FLangKN.UnitTexts[htuDay].Add(pfOne, 'ದಿನ');
+    FLangKN.UnitTexts[htuDay].Add(pfOther, 'ದಿನ');
+    FLangKN.UnitTexts[htuHour].Add(pfOne, 'ಗಂಟೆ');
+    FLangKN.UnitTexts[htuHour].Add(pfOther, 'ಗಂಟೆ');
+    FLangKN.UnitTexts[htuMinute].Add(pfOne, 'ನಿಮಿಷ');
+    FLangKN.UnitTexts[htuMinute].Add(pfOther, 'ನಿಮಿಷ');
+    FLangKN.UnitTexts[htuSecond].Add(pfOne, 'ಸೆಕೆಂಡ್');
+    FLangKN.UnitTexts[htuSecond].Add(pfOther, 'ಸೆಕೆಂಡ್');
   end;
   Result := FLangKN;
 end;
+
+initialization
 
 finalization
   FLangKN.Free;

@@ -32,16 +32,22 @@ begin
     FLangSA.LastYear  := 'गतवर्षः';
     FLangSA.NextYear  := 'आगामिवर्षः';
 
-    FLangSA.Before := 'पूर्वम्';
-    FLangSA.After  := 'पश्चात्';
+    FLangSA.Before := ' पूर्वम्';
+    FLangSA.After  := ' पश्चात्';
 
-    FLangSA.AddUnit(htuDay, 'दिनम्');
-    FLangSA.AddUnit(htuHour, 'होरा');
-    FLangSA.AddUnit(htuMinute, 'निमेषः');
-    FLangSA.AddUnit(htuSecond, 'क्षणम्');
+    FLangSA.UnitTexts[htuDay].Add(pfOne, 'दिनम्');
+    FLangSA.UnitTexts[htuDay].Add(pfOther, 'दिनम्');
+    FLangSA.UnitTexts[htuHour].Add(pfOne, 'होरा');
+    FLangSA.UnitTexts[htuHour].Add(pfOther, 'होरा');
+    FLangSA.UnitTexts[htuMinute].Add(pfOne, 'निमेषः');
+    FLangSA.UnitTexts[htuMinute].Add(pfOther, 'निमेषः');
+    FLangSA.UnitTexts[htuSecond].Add(pfOne, 'क्षणम्');
+    FLangSA.UnitTexts[htuSecond].Add(pfOther, 'क्षणम्');
   end;
   Result := FLangSA;
 end;
+
+initialization
 
 finalization
   FLangSA.Free;

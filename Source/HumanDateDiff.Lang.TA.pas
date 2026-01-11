@@ -32,16 +32,22 @@ begin
     FLangTA.LastYear  := 'கடந்த ஆண்டு';
     FLangTA.NextYear  := 'அடுத்த ஆண்டு';
 
-    FLangTA.Before := 'முன்பு';
-    FLangTA.After  := 'பிறகு';
+    FLangTA.Before := ' முன்பு';
+    FLangTA.After  := ' பிறகு';
 
-    FLangTA.AddUnit(htuDay, 'நாள்');
-    FLangTA.AddUnit(htuHour, 'மணி');
-    FLangTA.AddUnit(htuMinute, 'நிமிடம்');
-    FLangTA.AddUnit(htuSecond, 'விநாடி');
+    FLangTA.UnitTexts[htuDay].Add(pfOne, 'நாள்');
+    FLangTA.UnitTexts[htuDay].Add(pfOther, 'நாள்');
+    FLangTA.UnitTexts[htuHour].Add(pfOne, 'மணி');
+    FLangTA.UnitTexts[htuHour].Add(pfOther, 'மணி');
+    FLangTA.UnitTexts[htuMinute].Add(pfOne, 'நிமிடம்');
+    FLangTA.UnitTexts[htuMinute].Add(pfOther, 'நிமிடம்');
+    FLangTA.UnitTexts[htuSecond].Add(pfOne, 'விநாடி');
+    FLangTA.UnitTexts[htuSecond].Add(pfOther, 'விநாடி');
   end;
   Result := FLangTA;
 end;
+
+initialization
 
 finalization
   FLangTA.Free;

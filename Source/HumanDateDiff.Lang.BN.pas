@@ -32,16 +32,22 @@ begin
     FLangBN.LastYear  := 'গত বছর';
     FLangBN.NextYear  := 'আগামী বছর';
 
-    FLangBN.Before := 'আগে';
-    FLangBN.After  := 'পরে';
+    FLangBN.Before := ' আগে';
+    FLangBN.After  := ' পরে';
 
-    FLangBN.AddUnit(htuDay, 'দিন');
-    FLangBN.AddUnit(htuHour, 'ঘন্টা');
-    FLangBN.AddUnit(htuMinute, 'মিনিট');
-    FLangBN.AddUnit(htuSecond, 'সেকেন্ড');
+    FLangBN.UnitTexts[htuDay].Add(pfOne, 'দিন');
+    FLangBN.UnitTexts[htuDay].Add(pfOther, 'দিন');
+    FLangBN.UnitTexts[htuHour].Add(pfOne, 'ঘন্টা');
+    FLangBN.UnitTexts[htuHour].Add(pfOther, 'ঘন্টা');
+    FLangBN.UnitTexts[htuMinute].Add(pfOne, 'মিনিট');
+    FLangBN.UnitTexts[htuMinute].Add(pfOther, 'মিনিট');
+    FLangBN.UnitTexts[htuSecond].Add(pfOne, 'সেকেন্ড');
+    FLangBN.UnitTexts[htuSecond].Add(pfOther, 'সেকেন্ড');
   end;
   Result := FLangBN;
 end;
+
+initialization
 
 finalization
   FLangBN.Free;

@@ -1,4 +1,4 @@
-HumanDateDiff v1.0.0
-- Composite output
-- Smart thresholds
-- Indian locales
+HumanDateDiff v1.1.0
+- Multiple Indian locales (Hindi, Gujarati, Marathi, Tamil, Telugu, etc.)
+- Locale-specific plural rules
+- Runtime package ready
