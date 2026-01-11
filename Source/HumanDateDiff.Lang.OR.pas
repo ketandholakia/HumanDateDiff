@@ -11,29 +11,39 @@ function LangOR: TLang;
 
 implementation
 
+var
+  FLangOR: TLang;
+
 function LangOR: TLang;
 begin
-  Result := TLang.Create;
-  Result.PluralRule := IndianPluralRule;
+  if FLangOR = nil then
+  begin
+    FLangOR := TLang.Create;
+    FLangOR.PluralRule := IndianPluralRule;
 
-  Result.NowText   := 'ଏବେ';
-  Result.Yesterday := 'ଗତକାଲି';
-  Result.Tomorrow  := 'ଆସନ୍ତା କାଲି';
+    FLangOR.NowText   := 'ଏବେ';
+    FLangOR.Yesterday := 'ଗତକାଲି';
+    FLangOR.Tomorrow  := 'ଆସନ୍ତା କାଲି';
 
-  Result.LastWeek  := 'ଗତ ସପ୍ତାହ';
-  Result.NextWeek  := 'ଆସନ୍ତା ସପ୍ତାହ';
-  Result.LastMonth := 'ଗତ ମାସ';
-  Result.NextMonth := 'ଆସନ୍ତା ମାସ';
-  Result.LastYear  := 'ଗତ ବର୍ଷ';
-  Result.NextYear  := 'ଆସନ୍ତା ବର୍ଷ';
+    FLangOR.LastWeek  := 'ଗତ ସପ୍ତାହ';
+    FLangOR.NextWeek  := 'ଆସନ୍ତା ସପ୍ତାହ';
+    FLangOR.LastMonth := 'ଗତ ମାସ';
+    FLangOR.NextMonth := 'ଆସନ୍ତା ମାସ';
+    FLangOR.LastYear  := 'ଗତ ବର୍ଷ';
+    FLangOR.NextYear  := 'ଆସନ୍ତା ବର୍ଷ';
 
-  Result.Before := 'ପୂର୍ବରୁ';
-  Result.After  := 'ପରେ';
+    FLangOR.Before := 'ପୂର୍ବରୁ';
+    FLangOR.After  := 'ପରେ';
 
-  Result.AddUnit(htuDay, 'ଦିନ');
-  Result.AddUnit(htuHour, 'ଘଣ୍ଟା');
-  Result.AddUnit(htuMinute, 'ମିନିଟ');
-  Result.AddUnit(htuSecond, 'ସେକେଣ୍ଡ');
+    FLangOR.AddUnit(htuDay, 'ଦିନ');
+    FLangOR.AddUnit(htuHour, 'ଘଣ୍ଟା');
+    FLangOR.AddUnit(htuMinute, 'ମିନିଟ');
+    FLangOR.AddUnit(htuSecond, 'ସେକେଣ୍ଡ');
+  end;
+  Result := FLangOR;
 end;
+
+finalization
+  FLangOR.Free;
 
 end.

@@ -11,29 +11,39 @@ function LangML: TLang;
 
 implementation
 
+var
+  FLangML: TLang;
+
 function LangML: TLang;
 begin
-  Result := TLang.Create;
-  Result.PluralRule := IndianPluralRule;
+  if FLangML = nil then
+  begin
+    FLangML := TLang.Create;
+    FLangML.PluralRule := IndianPluralRule;
 
-  Result.NowText   := 'ഇപ്പോൾ';
-  Result.Yesterday := 'ഇന്നലെ';
-  Result.Tomorrow  := 'നാളെ';
+    FLangML.NowText   := 'ഇപ്പോൾ';
+    FLangML.Yesterday := 'ഇന്നലെ';
+    FLangML.Tomorrow  := 'നാളെ';
 
-  Result.LastWeek  := 'കഴിഞ്ഞ ആഴ്ച';
-  Result.NextWeek  := 'അടുത്ത ആഴ്ച';
-  Result.LastMonth := 'കഴിഞ്ഞ മാസം';
-  Result.NextMonth := 'അടുത്ത മാസം';
-  Result.LastYear  := 'കഴിഞ്ഞ വർഷം';
-  Result.NextYear  := 'അടുത്ത വർഷം';
+    FLangML.LastWeek  := 'കഴിഞ്ഞ ആഴ്ച';
+    FLangML.NextWeek  := 'അടുത്ത ആഴ്ച';
+    FLangML.LastMonth := 'കഴിഞ്ഞ മാസം';
+    FLangML.NextMonth := 'അടുത്ത മാസം';
+    FLangML.LastYear  := 'കഴിഞ്ഞ വർഷം';
+    FLangML.NextYear  := 'അടുത്ത വർഷം';
 
-  Result.Before := 'മുൻപ്';
-  Result.After  := 'ശേഷം';
+    FLangML.Before := 'മുൻപ്';
+    FLangML.After  := 'ശേഷം';
 
-  Result.AddUnit(htuDay, 'ദിവസം');
-  Result.AddUnit(htuHour, 'മണിക്കൂർ');
-  Result.AddUnit(htuMinute, 'മിനിറ്റ്');
-  Result.AddUnit(htuSecond, 'സെക്കൻഡ്');
+    FLangML.AddUnit(htuDay, 'ദിവസം');
+    FLangML.AddUnit(htuHour, 'മണിക്കൂർ');
+    FLangML.AddUnit(htuMinute, 'മിനിറ്റ്');
+    FLangML.AddUnit(htuSecond, 'സെക്കൻഡ്');
+  end;
+  Result := FLangML;
 end;
+
+finalization
+  FLangML.Free;
 
 end.

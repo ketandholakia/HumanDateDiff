@@ -11,29 +11,39 @@ function LangAS: TLang;
 
 implementation
 
+var
+  FLangAS: TLang;
+
 function LangAS: TLang;
 begin
-  Result := TLang.Create;
-  Result.PluralRule := IndianPluralRule;
+  if FLangAS = nil then
+  begin
+    FLangAS := TLang.Create;
+    FLangAS.PluralRule := IndianPluralRule;
 
-  Result.NowText   := 'এতিয়া';
-  Result.Yesterday := 'যোৱাকালি';
-  Result.Tomorrow  := 'অহাকালি';
+    FLangAS.NowText   := 'এতিয়া';
+    FLangAS.Yesterday := 'যোৱাকালি';
+    FLangAS.Tomorrow  := 'অহাকালি';
 
-  Result.LastWeek  := 'যোৱা সপ্তাহ';
-  Result.NextWeek  := 'অহা সপ্তাহ';
-  Result.LastMonth := 'যোৱা মাহ';
-  Result.NextMonth := 'অহা মাহ';
-  Result.LastYear  := 'যোৱাবছৰ';
-  Result.NextYear  := 'অহা বছৰ';
+    FLangAS.LastWeek  := 'যোৱা সপ্তাহ';
+    FLangAS.NextWeek  := 'অহা সপ্তাহ';
+    FLangAS.LastMonth := 'যোৱা মাহ';
+    FLangAS.NextMonth := 'অহা মাহ';
+    FLangAS.LastYear  := 'যোৱাবছৰ';
+    FLangAS.NextYear  := 'অহা বছৰ';
 
-  Result.Before := 'আগতে';
-  Result.After  := 'পাছত';
+    FLangAS.Before := 'আগতে';
+    FLangAS.After  := 'পাছত';
 
-  Result.AddUnit(htuDay, 'দিন');
-  Result.AddUnit(htuHour, 'ঘণ্টা');
-  Result.AddUnit(htuMinute, 'মিনিট');
-  Result.AddUnit(htuSecond, 'ছেকেণ্ড');
+    FLangAS.AddUnit(htuDay, 'দিন');
+    FLangAS.AddUnit(htuHour, 'ঘণ্টা');
+    FLangAS.AddUnit(htuMinute, 'মিনিট');
+    FLangAS.AddUnit(htuSecond, 'ছেকেণ্ড');
+  end;
+  Result := FLangAS;
 end;
+
+finalization
+  FLangAS.Free;
 
 end.

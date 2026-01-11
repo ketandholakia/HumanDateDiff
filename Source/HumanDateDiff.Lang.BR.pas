@@ -8,6 +8,9 @@ function LangBR: TLang;
 
 implementation
 
+var
+  FLangBR: TLang;
+
 function BrazilianPlural(AValue: Integer): TPluralForm;
 begin
   if AValue = 1 then
@@ -18,36 +21,43 @@ end;
 
 function LangBR: TLang;
 begin
-  Result := TLang.Create;
+  if FLangBR = nil then
+  begin
+    FLangBR := TLang.Create;
 
-  Result.Before     := ' atrás';
-  Result.After      := ' a partir de agora';
-  Result.NowText    := 'agora mesmo';
-  Result.Yesterday  := 'ontem';
-  Result.Tomorrow   := 'amanhã';
-  Result.LastWeek   := 'semana passada';
-  Result.NextWeek   := 'próxima semana';
-  Result.LastMonth  := 'mês passado';
-  Result.NextMonth  := 'próximo mês';
-  Result.LastYear   := 'ano passado';
-  Result.NextYear   := 'próximo ano';
+    FLangBR.Before     := ' atrás';
+    FLangBR.After      := ' a partir de agora';
+    FLangBR.NowText    := 'agora mesmo';
+    FLangBR.Yesterday  := 'ontem';
+    FLangBR.Tomorrow   := 'amanhã';
+    FLangBR.LastWeek   := 'semana passada';
+    FLangBR.NextWeek   := 'próxima semana';
+    FLangBR.LastMonth  := 'mês passado';
+    FLangBR.NextMonth  := 'próximo mês';
+    FLangBR.LastYear   := 'ano passado';
+    FLangBR.NextYear   := 'próximo ano';
 
-  Result.PluralRule := BrazilianPlural;
+    FLangBR.PluralRule := BrazilianPlural;
 
-  Result.UnitTexts[htuYear].Add(pfOne, 'ano');
-  Result.UnitTexts[htuYear].Add(pfOther, 'anos');
-  Result.UnitTexts[htuMonth].Add(pfOne, 'mês');
-  Result.UnitTexts[htuMonth].Add(pfOther, 'meses');
-  Result.UnitTexts[htuWeek].Add(pfOne, 'semana');
-  Result.UnitTexts[htuWeek].Add(pfOther, 'semanas');
-  Result.UnitTexts[htuDay].Add(pfOne, 'dia');
-  Result.UnitTexts[htuDay].Add(pfOther, 'dias');
-  Result.UnitTexts[htuHour].Add(pfOne, 'hora');
-  Result.UnitTexts[htuHour].Add(pfOther, 'horas');
-  Result.UnitTexts[htuMinute].Add(pfOne, 'minuto');
-  Result.UnitTexts[htuMinute].Add(pfOther, 'minutos');
-  Result.UnitTexts[htuSecond].Add(pfOne, 'segundo');
-  Result.UnitTexts[htuSecond].Add(pfOther, 'segundos');
+    FLangBR.UnitTexts[htuYear].Add(pfOne, 'ano');
+    FLangBR.UnitTexts[htuYear].Add(pfOther, 'anos');
+    FLangBR.UnitTexts[htuMonth].Add(pfOne, 'mês');
+    FLangBR.UnitTexts[htuMonth].Add(pfOther, 'meses');
+    FLangBR.UnitTexts[htuWeek].Add(pfOne, 'semana');
+    FLangBR.UnitTexts[htuWeek].Add(pfOther, 'semanas');
+    FLangBR.UnitTexts[htuDay].Add(pfOne, 'dia');
+    FLangBR.UnitTexts[htuDay].Add(pfOther, 'dias');
+    FLangBR.UnitTexts[htuHour].Add(pfOne, 'hora');
+    FLangBR.UnitTexts[htuHour].Add(pfOther, 'horas');
+    FLangBR.UnitTexts[htuMinute].Add(pfOne, 'minuto');
+    FLangBR.UnitTexts[htuMinute].Add(pfOther, 'minutos');
+    FLangBR.UnitTexts[htuSecond].Add(pfOne, 'segundo');
+    FLangBR.UnitTexts[htuSecond].Add(pfOther, 'segundos');
+  end;
+  Result := FLangBR;
 end;
+
+finalization
+  FLangBR.Free;
 
 end.

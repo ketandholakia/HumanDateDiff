@@ -11,29 +11,39 @@ function LangTA: TLang;
 
 implementation
 
+var
+  FLangTA: TLang;
+
 function LangTA: TLang;
 begin
-  Result := TLang.Create;
-  Result.PluralRule := IndianPluralRule;
+  if FLangTA = nil then
+  begin
+    FLangTA := TLang.Create;
+    FLangTA.PluralRule := IndianPluralRule;
 
-  Result.NowText   := 'இப்போது';
-  Result.Yesterday := 'நேற்று';
-  Result.Tomorrow  := 'நாளை';
+    FLangTA.NowText   := 'இப்போது';
+    FLangTA.Yesterday := 'நேற்று';
+    FLangTA.Tomorrow  := 'நாளை';
 
-  Result.LastWeek  := 'கடந்த வாரம்';
-  Result.NextWeek  := 'அடுத்த வாரம்';
-  Result.LastMonth := 'கடந்த மாதம்';
-  Result.NextMonth := 'அடுத்த மாதம்';
-  Result.LastYear  := 'கடந்த ஆண்டு';
-  Result.NextYear  := 'அடுத்த ஆண்டு';
+    FLangTA.LastWeek  := 'கடந்த வாரம்';
+    FLangTA.NextWeek  := 'அடுத்த வாரம்';
+    FLangTA.LastMonth := 'கடந்த மாதம்';
+    FLangTA.NextMonth := 'அடுத்த மாதம்';
+    FLangTA.LastYear  := 'கடந்த ஆண்டு';
+    FLangTA.NextYear  := 'அடுத்த ஆண்டு';
 
-  Result.Before := 'முன்பு';
-  Result.After  := 'பிறகு';
+    FLangTA.Before := 'முன்பு';
+    FLangTA.After  := 'பிறகு';
 
-  Result.AddUnit(htuDay, 'நாள்');
-  Result.AddUnit(htuHour, 'மணி');
-  Result.AddUnit(htuMinute, 'நிமிடம்');
-  Result.AddUnit(htuSecond, 'விநாடி');
+    FLangTA.AddUnit(htuDay, 'நாள்');
+    FLangTA.AddUnit(htuHour, 'மணி');
+    FLangTA.AddUnit(htuMinute, 'நிமிடம்');
+    FLangTA.AddUnit(htuSecond, 'விநாடி');
+  end;
+  Result := FLangTA;
 end;
+
+finalization
+  FLangTA.Free;
 
 end.

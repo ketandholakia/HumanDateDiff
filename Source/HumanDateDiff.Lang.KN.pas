@@ -11,29 +11,39 @@ function LangKN: TLang;
 
 implementation
 
+var
+  FLangKN: TLang;
+
 function LangKN: TLang;
 begin
-  Result := TLang.Create;
-  Result.PluralRule := IndianPluralRule;
+  if FLangKN = nil then
+  begin
+    FLangKN := TLang.Create;
+    FLangKN.PluralRule := IndianPluralRule;
 
-  Result.NowText   := 'ಈಗ';
-  Result.Yesterday := 'ನಿನ್ನೆ';
-  Result.Tomorrow  := 'ನಾಳೆ';
+    FLangKN.NowText   := 'ಈಗ';
+    FLangKN.Yesterday := 'ನಿನ್ನೆ';
+    FLangKN.Tomorrow  := 'ನಾಳೆ';
 
-  Result.LastWeek  := 'ಕಳೆದ ವಾರ';
-  Result.NextWeek  := 'ಮುಂದಿನ ವಾರ';
-  Result.LastMonth := 'ಕಳೆದ ತಿಂಗಳು';
-  Result.NextMonth := 'ಮುಂದಿನ ತಿಂಗಳು';
-  Result.LastYear  := 'ಕಳೆದ ವರ್ಷ';
-  Result.NextYear  := 'ಮುಂದಿನ ವರ್ಷ';
+    FLangKN.LastWeek  := 'ಕಳೆದ ವಾರ';
+    FLangKN.NextWeek  := 'ಮುಂದಿನ ವಾರ';
+    FLangKN.LastMonth := 'ಕಳೆದ ತಿಂಗಳು';
+    FLangKN.NextMonth := 'ಮುಂದಿನ ತಿಂಗಳು';
+    FLangKN.LastYear  := 'ಕಳೆದ ವರ್ಷ';
+    FLangKN.NextYear  := 'ಮುಂದಿನ ವರ್ಷ';
 
-  Result.Before := 'ಮೊದಲು';
-  Result.After  := 'ನಂತರ';
+    FLangKN.Before := 'ಮೊದಲು';
+    FLangKN.After  := 'ನಂತರ';
 
-  Result.AddUnit(htuDay, 'ದಿನ');
-  Result.AddUnit(htuHour, 'ಗಂಟೆ');
-  Result.AddUnit(htuMinute, 'ನಿಮಿಷ');
-  Result.AddUnit(htuSecond, 'ಸೆಕೆಂಡ್');
+    FLangKN.AddUnit(htuDay, 'ದಿನ');
+    FLangKN.AddUnit(htuHour, 'ಗಂಟೆ');
+    FLangKN.AddUnit(htuMinute, 'ನಿಮಿಷ');
+    FLangKN.AddUnit(htuSecond, 'ಸೆಕೆಂಡ್');
+  end;
+  Result := FLangKN;
 end;
+
+finalization
+  FLangKN.Free;
 
 end.

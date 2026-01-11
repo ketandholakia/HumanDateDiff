@@ -11,29 +11,39 @@ function LangPA: TLang;
 
 implementation
 
+var
+  FLangPA: TLang;
+
 function LangPA: TLang;
 begin
-  Result := TLang.Create;
-  Result.PluralRule := IndianPluralRule;
+  if FLangPA = nil then
+  begin
+    FLangPA := TLang.Create;
+    FLangPA.PluralRule := IndianPluralRule;
 
-  Result.NowText   := 'ਹੁਣ';
-  Result.Yesterday := 'ਕੱਲ੍ਹ';
-  Result.Tomorrow  := 'ਕੱਲ੍ਹ';
+    FLangPA.NowText   := 'ਹੁਣ';
+    FLangPA.Yesterday := 'ਕੱਲ੍ਹ';
+    FLangPA.Tomorrow  := 'ਕੱਲ੍ਹ';
 
-  Result.LastWeek  := 'ਪਿਛਲੇ ਹਫ਼ਤੇ';
-  Result.NextWeek  := 'ਅਗਲੇ ਹਫ਼ਤੇ';
-  Result.LastMonth := 'ਪਿਛਲੇ ਮਹੀਨੇ';
-  Result.NextMonth := 'ਅਗਲੇ ਮਹੀਨੇ';
-  Result.LastYear  := 'ਪਿਛਲੇ ਸਾਲ';
-  Result.NextYear  := 'ਅਗਲੇ ਸਾਲ';
+    FLangPA.LastWeek  := 'ਪਿਛਲੇ ਹਫ਼ਤੇ';
+    FLangPA.NextWeek  := 'ਅਗਲੇ ਹਫ਼ਤੇ';
+    FLangPA.LastMonth := 'ਪਿਛਲੇ ਮਹੀਨੇ';
+    FLangPA.NextMonth := 'ਅਗਲੇ ਮਹੀਨੇ';
+    FLangPA.LastYear  := 'ਪਿਛਲੇ ਸਾਲ';
+    FLangPA.NextYear  := 'ਅਗਲੇ ਸਾਲ';
 
-  Result.Before := 'ਪਹਿਲਾਂ';
-  Result.After  := 'ਬਾਅਦ';
+    FLangPA.Before := 'ਪਹਿਲਾਂ';
+    FLangPA.After  := 'ਬਾਅਦ';
 
-  Result.AddUnit(htuDay, 'ਦਿਨ');
-  Result.AddUnit(htuHour, 'ਘੰਟਾ');
-  Result.AddUnit(htuMinute, 'ਮਿੰਟ');
-  Result.AddUnit(htuSecond, 'ਸੈਕਿੰਡ');
+    FLangPA.AddUnit(htuDay, 'ਦਿਨ');
+    FLangPA.AddUnit(htuHour, 'ਘੰਟਾ');
+    FLangPA.AddUnit(htuMinute, 'ਮਿੰਟ');
+    FLangPA.AddUnit(htuSecond, 'ਸੈਕਿੰਡ');
+  end;
+  Result := FLangPA;
 end;
+
+finalization
+  FLangPA.Free;
 
 end.
