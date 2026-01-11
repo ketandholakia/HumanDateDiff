@@ -57,6 +57,8 @@ begin
   Result := FLangEN;
 end;
 
+initialization
+
 finalization
   FLangEN.Free;
 
